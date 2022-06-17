@@ -1,0 +1,38 @@
+<div class="container w-25 mt-5">
+    <form>
+      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+  
+      <div class=" my-3">
+        <label for="email" class="form-label" cl>Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          placeholder="name@example.com"
+          name="email"
+          [(ngModel)]="user.email"
+          required
+          #email="ngModel"
+        />
+        <small class="text-danger" *ngIf="!email.valid">Email is required</small>
+      </div>
+      <div class=" my-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Password"
+          name="password"
+          [(ngModel)]="user.password"
+          required
+          #password="ngModel"
+        />
+        <small class="text-danger" *ngIf="!password.valid"
+          >Password is required</small
+        >
+      </div>
+      <button class="w-100 btn btn-lg btn-primary mb-2" type="submit" (click)="login()">
+        Sign in
+      </button>
+      <p>Don't You have account? regester <a routerLink="/register">here</a></p>
+    </form>
+  </div>

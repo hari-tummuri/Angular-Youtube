@@ -1,0 +1,53 @@
+<div class="container w-25 mt-5">
+  <form>
+    <h1 class="h3 mb-3 fw-normal">Please sign Up</h1>
+
+    <div class="my-3">
+      <label for="email" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        placeholder="name@example.com"
+        name="email"
+        [(ngModel)]="regesterUser.email"
+        #email="ngModel"
+        required
+      />
+      <small class="text-danger" *ngIf="!email.valid">Email required</small>
+    </div>
+    <div class="my-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Password"
+        name="password"
+        [(ngModel)]="regesterUser.password"
+        #password="ngModel"
+        required
+      />
+      <small class="text-danger" *ngIf="!password.valid">Password required</small>
+    </div>
+    <div class="my-3">
+      <label for="confirmPassword" class="form-label">Confirm Password</label>
+      <input
+        type="password"
+        class="form-control"
+        placeholder="ConfirmPassword"
+        name="confirmPassword"
+        [(ngModel)]="regesterUser.confirmPassword"
+        #confirmPassword="ngModel"
+        required
+      />
+      <small class="text-danger" *ngIf="!confirmPassword.valid">ReEnter your Password</small>
+    </div>
+    <button
+      class="w-100 btn btn-lg btn-primary mb-2"
+      type="submit"
+      (click)="regester()"
+    >
+      Sign Up
+    </button>
+    <p>Already have account? Sign In <a routerLink="/login">here</a></p>
+  </form>
+</div>
