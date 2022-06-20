@@ -5,7 +5,7 @@ export interface VideoDetails {
   videoUrl: string;
   thumbnail: string;
   description: string;
-  catagory: string;
-  likes: string;
+  logo: string;
+  likes: number;
   time: string;
 }

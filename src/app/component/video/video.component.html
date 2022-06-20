@@ -18,196 +18,38 @@
           <p class="f-75">{{ video.likes }} likes . {{ video.time }}</p>
         </div>
         <div class="col">
-          <a href="#" class="mx-3 text-decoration-none text-dark"
-            ><i class="fa-solid fa-thumbs-up mx-2"></i>Like</a
-          >
-          <a href="#" class="mx-3 text-decoration-none text-dark"
+          <a (click)="like()" class="mx-3 text-decoration-none text-dark"
+            ><i class="fa-solid fa-thumbs-up mx-2"></i
+          ></a>
+          <a (click)="share()" class="mx-3 text-decoration-none text-dark"
             ><i class="fa-solid fa-share mx-2"></i>Share</a
           >
         </div>
+        <div class="row">
+          <span class="text-primary">{{ url }}</span>
+        </div>
+        <div class="row">{{ video.description }}</div>
       </div>
     </div>
     <div class="col-4 ml-2">
-      <div class="row mt-2">
+      <div class="row mt-2" *ngFor="let video of remainingVideos">{{video}}</div>
+        <div class="row mt-2" *ngFor="let video of remainingVideos">
         <div class="col-5 pl-0">
-          <img
-            src="https://media.istockphoto.com/photos/cosmetics-product-advertising-stand-exhibition-wooden-podium-on-green-picture-id1309565328?b=1&k=20&m=1309565328&s=170667a&w=0&h=Q30lP5hbjxGi3PGnYQcixoOHpbCXCxb39ekjOCXA8EQ="
-            alt=""
-            class="align-card-img"
-          />
+          <img src="{{ video.thumbnail }}" alt="" class="align-card-img" />
         </div>
         <div class="col-7 ml-2">
           <div class="row">
-            <strong>Java Comunity class day 1</strong>
+            <strong>{{ video.title }}</strong>
           </div>
           <div class="row">
             <div class="col">
-              <p>Telusko <i class="fa-solid fa-circle-check"></i></p>
+              <p>
+                {{ video.channel }} <i class="fa-solid fa-circle-check"></i>
+              </p>
             </div>
           </div>
           <div class="row">
-            <p class="f-75">22k views . 1 month ago</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row mt-2">
-        <div class="col-5 pl-0">
-          <img
-            src="https://media.istockphoto.com/photos/cosmetics-product-advertising-stand-exhibition-wooden-podium-on-green-picture-id1309565328?b=1&k=20&m=1309565328&s=170667a&w=0&h=Q30lP5hbjxGi3PGnYQcixoOHpbCXCxb39ekjOCXA8EQ="
-            alt=""
-            class="align-card-img"
-          />
-        </div>
-        <div class="col-7 ml-2">
-          <div class="row">
-            <strong>Java Comunity class day 1</strong>
-          </div>
-          <div class="row">
-            <div class="col">
-              <p>Telusko <i class="fa-solid fa-circle-check"></i></p>
-            </div>
-          </div>
-          <div class="row">
-            <p class="f-75">22k views . 1 month ago</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row mt-2">
-        <div class="col-5 pl-0">
-          <img
-            src="https://media.istockphoto.com/photos/cosmetics-product-advertising-stand-exhibition-wooden-podium-on-green-picture-id1309565328?b=1&k=20&m=1309565328&s=170667a&w=0&h=Q30lP5hbjxGi3PGnYQcixoOHpbCXCxb39ekjOCXA8EQ="
-            alt=""
-            class="align-card-img"
-          />
-        </div>
-        <div class="col-7 ml-2">
-          <div class="row">
-            <strong>Java Comunity class day 1</strong>
-          </div>
-          <div class="row">
-            <div class="col">
-              <p>Telusko <i class="fa-solid fa-circle-check"></i></p>
-            </div>
-          </div>
-          <div class="row">
-            <p class="f-75">22k views . 1 month ago</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row mt-2">
-        <div class="col-5 pl-0">
-          <img
-            src="https://media.istockphoto.com/photos/cosmetics-product-advertising-stand-exhibition-wooden-podium-on-green-picture-id1309565328?b=1&k=20&m=1309565328&s=170667a&w=0&h=Q30lP5hbjxGi3PGnYQcixoOHpbCXCxb39ekjOCXA8EQ="
-            alt=""
-            class="align-card-img"
-          />
-        </div>
-        <div class="col-7 ml-2">
-          <div class="row">
-            <strong>Java Comunity class day 1</strong>
-          </div>
-          <div class="row">
-            <div class="col">
-              <p>Telusko <i class="fa-solid fa-circle-check"></i></p>
-            </div>
-          </div>
-          <div class="row">
-            <p class="f-75">22k views . 1 month ago</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row mt-2">
-        <div class="col-5 pl-0">
-          <img
-            src="https://media.istockphoto.com/photos/cosmetics-product-advertising-stand-exhibition-wooden-podium-on-green-picture-id1309565328?b=1&k=20&m=1309565328&s=170667a&w=0&h=Q30lP5hbjxGi3PGnYQcixoOHpbCXCxb39ekjOCXA8EQ="
-            alt=""
-            class="align-card-img"
-          />
-        </div>
-        <div class="col-7 ml-2">
-          <div class="row">
-            <strong>Java Comunity class day 1</strong>
-          </div>
-          <div class="row">
-            <div class="col">
-              <p>Telusko <i class="fa-solid fa-circle-check"></i></p>
-            </div>
-          </div>
-          <div class="row">
-            <p class="f-75">22k views . 1 month ago</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row mt-2">
-        <div class="col-5 pl-0">
-          <img
-            src="https://media.istockphoto.com/photos/cosmetics-product-advertising-stand-exhibition-wooden-podium-on-green-picture-id1309565328?b=1&k=20&m=1309565328&s=170667a&w=0&h=Q30lP5hbjxGi3PGnYQcixoOHpbCXCxb39ekjOCXA8EQ="
-            alt=""
-            class="align-card-img"
-          />
-        </div>
-        <div class="col-7 ml-2">
-          <div class="row">
-            <strong>Java Comunity class day 1</strong>
-          </div>
-          <div class="row">
-            <div class="col">
-              <p>Telusko <i class="fa-solid fa-circle-check"></i></p>
-            </div>
-          </div>
-          <div class="row">
-            <p class="f-75">22k views . 1 month ago</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row mt-2">
-        <div class="col-5 pl-0">
-          <img
-            src="https://media.istockphoto.com/photos/cosmetics-product-advertising-stand-exhibition-wooden-podium-on-green-picture-id1309565328?b=1&k=20&m=1309565328&s=170667a&w=0&h=Q30lP5hbjxGi3PGnYQcixoOHpbCXCxb39ekjOCXA8EQ="
-            alt=""
-            class="align-card-img"
-          />
-        </div>
-        <div class="col-7 ml-2">
-          <div class="row">
-            <strong>Java Comunity class day 1</strong>
-          </div>
-          <div class="row">
-            <div class="col">
-              <p>Telusko <i class="fa-solid fa-circle-check"></i></p>
-            </div>
-          </div>
-          <div class="row">
-            <p class="f-75">22k views . 1 month ago</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row mt-2">
-        <div class="col-5 pl-0">
-          <img
-            src="https://media.istockphoto.com/photos/cosmetics-product-advertising-stand-exhibition-wooden-podium-on-green-picture-id1309565328?b=1&k=20&m=1309565328&s=170667a&w=0&h=Q30lP5hbjxGi3PGnYQcixoOHpbCXCxb39ekjOCXA8EQ="
-            alt=""
-            class="align-card-img"
-          />
-        </div>
-        <div class="col-7 ml-2">
-          <div class="row">
-            <strong>Java Comunity class day 1</strong>
-          </div>
-          <div class="row">
-            <div class="col">
-              <p>Telusko <i class="fa-solid fa-circle-check"></i></p>
-            </div>
-          </div>
-          <div class="row">
-            <p class="f-75">22k views . 1 month ago</p>
+            <p class="f-75">{{ video.likes }} Likes . {{ video.time }}</p>
           </div>
         </div>
       </div>

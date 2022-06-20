@@ -27,7 +27,12 @@
       <textarea class="form-control" rows="3" [(ngModel)]="video.description" name="description" #description="ngModel" required></textarea>
       <small class="text-danger" *ngIf="!description.valid">Description is required</small>
     </div>
-
+    !-- Thumbnail -->
+    <div class="mb-3">
+      <label for="Logo" class="form-label">Logo</label>
+      <input type="text" class="form-control" [(ngModel)]="video.logo" name="logo" #logo="ngModel" required/>
+      <small class="text-danger" *ngIf="!logo.valid">Thumbnail is required</small>
+    </div>
     <button type="submit" class="btn btn-primary" (click)="create()">Create</button>
   </form>
 </div>

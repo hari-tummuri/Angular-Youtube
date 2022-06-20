@@ -41,6 +41,32 @@
       />
       <small class="text-danger" *ngIf="!confirmPassword.valid">ReEnter your Password</small>
     </div>
+    <div class="my-3">
+      <label for="channel" class="form-label">Channel</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Channel"
+        name="channel"
+        [(ngModel)]="regesterUser.channel"
+        #channel="ngModel"
+        required
+      />
+      <small class="text-danger" *ngIf="!channel.valid">Channel name  required</small>
+    </div>
+    <div class="my-3">
+      <label for="logo" class="form-label">Channel Logo</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Channel Logo"
+        name="logo"
+        [(ngModel)]="regesterUser.logo"
+        #logo="ngModel"
+        required
+      />
+      <small class="text-danger" *ngIf="!logo.valid">Channel Logo  required</small>
+    </div>
     <button
       class="w-100 btn btn-lg btn-primary mb-2"
       type="submit"

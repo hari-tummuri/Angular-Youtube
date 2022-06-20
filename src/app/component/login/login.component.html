@@ -3,17 +3,17 @@
       <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
   
       <div class=" my-3">
-        <label for="email" class="form-label" cl>Email address</label>
+        <label for="username" class="form-label" >Username or Email</label>
         <input
           type="email"
           class="form-control"
           placeholder="name@example.com"
           name="email"
-          [(ngModel)]="user.email"
+          [(ngModel)]="user.username"
           required
-          #email="ngModel"
+          #username="ngModel"
         />
-        <small class="text-danger" *ngIf="!email.valid">Email is required</small>
+        <small class="text-danger" *ngIf="!username.valid">Username is required</small>
       </div>
       <div class=" my-3">
         <label for="password" class="form-label">Password</label>

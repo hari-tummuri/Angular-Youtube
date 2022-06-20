@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SafePipePipe } from './safe-pipe.pipe';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { SafePipePipe } from './safe-pipe.pipe';
     NavbarComponent,
     RegesterComponent,
     VideoComponent,
-    SafePipePipe
+    SafePipePipe,
+
   ],
   imports: [
     BrowserModule,

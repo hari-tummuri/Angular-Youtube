@@ -18,16 +18,32 @@ export class VideoComponent implements OnInit {
     videoUrl: '',
     thumbnail: '',
     description: '',
-    catagory:'',
-    likes: '',
+    logo: '',
+    likes: 0,
     time: '',
   };
-  constructor(private route: ActivatedRoute,private videoService:VideoService) {}
+  allVideos: VideoDetails[] = [];
+  url: string = '';
+  remainingVideos: VideoDetails[] = [];
+  constructor(
+    private route: ActivatedRoute,
+    private videoService: VideoService
+  ) {
+    this.remainingVideos = this.videoService.getRemainingVideos(this.id);
+    console.log(this.remainingVideos);
+  }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    
+    console.log(this.id);
     this.video = this.videoService.getVideoById(this.id);
-    console.log(this.video.videoUrl);
+  }
+
+  like() {
+    this.video.likes = this.video.likes + 1;
+  }
+  share() {
+    if (this.url === '') this.url = this.video.videoUrl;
+    else this.url = '';
   }
 }

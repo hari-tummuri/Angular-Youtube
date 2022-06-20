@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./regester.component.css'],
 })
 export class RegesterComponent implements OnInit {
-  regesterUser = { email: '', password: '', confirmPassword: '' };
+  regesterUser = { email: '', password: '', confirmPassword: '',channel:'' ,logo:''};
   constructor(private router:Router) {}
 
   ngOnInit(): void {}
