@@ -11,6 +11,7 @@ import { RegesterComponent } from './component/regester/regester.component';
 import { VideoComponent } from './component/video/video.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SafePipePipe } from './safe-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     NavbarComponent,
     RegesterComponent,
-    VideoComponent
+    VideoComponent,
+    SafePipePipe
   ],
   imports: [
     BrowserModule,

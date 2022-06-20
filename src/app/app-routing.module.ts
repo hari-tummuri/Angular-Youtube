@@ -9,7 +9,7 @@ import { VideoComponent } from './component/video/video.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'video', component: VideoComponent },
+  { path: 'video/:id', component: VideoComponent },
   { path: 'create', component: CreateComponent },
   { path: 'register', component: RegesterComponent },
 ];

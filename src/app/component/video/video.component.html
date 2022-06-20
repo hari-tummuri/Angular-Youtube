@@ -5,17 +5,17 @@
     <div class="col-8">
       <div class="ratio ratio-16x9">
         <iframe
-          src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
+          [src]="video.videoUrl | safePipe"
           title="YouTube video"
           allowfullscreen
         ></iframe>
       </div>
       <div class="row mt-2">
-        <h4>Java Quiz</h4>
+        <h4>{{ video.title }}</h4>
       </div>
-      <div class="row ">
-        <div class="col d-flex  align-items-start">
-          <p class="f-75">1,652 views . 14 Jun 2022</p>
+      <div class="row">
+        <div class="col d-flex align-items-start">
+          <p class="f-75">{{ video.likes }} likes . {{ video.time }}</p>
         </div>
         <div class="col">
           <a href="#" class="mx-3 text-decoration-none text-dark"

@@ -7,7 +7,7 @@ import { VideoDetails } from '../model/VideoDetails';
 export class VideoService {
   videos: VideoDetails[] = [
     {
-      id:1,
+      id: 1,
       title: 'Onplus 10R Review',
       channel: 'TechWiser',
       videoUrl: 'https://www.youtube.com/watch?v=Jv8_LDkg6Rg',
@@ -18,7 +18,7 @@ export class VideoService {
       time: '10 days ago',
     },
     {
-      id:2,
+      id: 2,
       title:
         'RRR Trailer - NTR, Ram Charan, Ajay Devgn, Alia Bhatt | SS Rajamouli | 25th March 2022',
       channel: 'DVV Entertainment',
@@ -31,7 +31,7 @@ export class VideoService {
       time: '9 DEC 2021',
     },
     {
-      id : 3,
+      id: 3,
       title:
         'BRAHMĀSTRA OFFICIAL TRAILER | Hindi | Amitabh | Ranbir | Alia | Ayan | In Cinemas 9th September',
       channel: 'Dharma Productions',
@@ -44,7 +44,7 @@ export class VideoService {
       time: '15 June 2022',
     },
     {
-      id:4,
+      id: 4,
       title:
         'Nanna na hero - Fathers day Special - Sridevi Drama Company Promo - 19th June 2022 - Rashmi Gautam',
       channel: 'Mallemalatv',
@@ -59,17 +59,16 @@ export class VideoService {
   ];
   constructor() {}
 
-  getAllVideos(){
+  getAllVideos() {
     return this.videos;
   }
 
-  getVideoById(id:number){
-    for(var i=0;i<this.videos.length;i++){
-      if(id === this.videos[i].id){
+  getVideoById(id: number) {
+    for (var i = 0; i < this.videos.length; i++) {
+      if (id === this.videos[i].id) {
         return this.videos[i];
       }
     }
-    return null;
+    return this.videos[0];
   }
-
 }
