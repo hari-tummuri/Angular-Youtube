@@ -18,6 +18,7 @@ export class VideoComponent implements OnInit {
     videoUrl: '',
     thumbnail: '',
     description: '',
+    catagory:'',
     likes: '',
     time: '',
   };

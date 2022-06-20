@@ -1,10 +1,11 @@
 export interface VideoDetails {
-  id:number;
+  id: number;
   title: string;
-  channel : string;
+  channel: string;
   videoUrl: string;
   thumbnail: string;
   description: string;
-  likes : string;
-  time : string;
+  catagory: string;
+  likes: string;
+  time: string;
 }

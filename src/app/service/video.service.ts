@@ -14,6 +14,7 @@ export class VideoService {
       thumbnail:
         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnoNuR-XfEBJgTMkFoik8QABrExqKC_CNYWg&usqp=CAU',
       description: 'Check out OnePlus 10R 5G - https://amzn.to/3Me46zI ',
+      catagory:'Informative',
       likes: '3.4k',
       time: '10 days ago',
     },
@@ -27,6 +28,7 @@ export class VideoService {
         'https://i.ytimg.com/vi/NgBoMJy386M/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLAjFjm-bBDz9Syat5ZvDj16-TGTlA',
       description:
         'From Indian Filmmaker SS Rajamouli (Director of Baahubali) comes Indias Biggest Action Drama #RRRMovie, in theatres March 25th, 2022',
+        catagory:'Entertainment',
       likes: '1.8M',
       time: '9 DEC 2021',
     },
@@ -40,6 +42,7 @@ export class VideoService {
         'https://i.ytimg.com/vi/AgS_6UbQ8JM/hqdefault.jpg?sqp=-oaymwEXCNACELwBSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLBtmuUC_vom9hv0sMGpQmk-53Gnmg',
       description:
         'Presenting the official Trailer of Brahmāstra. Get ready to experience a new world of Ancient Indian Astras and the magic of this extraordinary journey.',
+        catagory:'Entertainment',
       likes: '267K',
       time: '15 June 2022',
     },
@@ -53,6 +56,7 @@ export class VideoService {
         'https://i.ytimg.com/vi/6LVBE54tI8A/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLByrFOcBmss3Kf0RAVSIN_A-rF-HQ',
       description:
         'Nanna na hero - Fathers day Special - Sridevi Drama Company Promo - 19th June 2022 - Rashmi Gautam',
+        catagory:'Entertainment',
       likes: '74K',
       time: '15 June 2022',
     },
