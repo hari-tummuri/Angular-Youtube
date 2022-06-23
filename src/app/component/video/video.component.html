@@ -5,8 +5,12 @@
     <div class="col-8">
       <div class="ratio ratio-16x9">
         <iframe
-          [src]="video.videoUrl | safePipe"
-          title="YouTube video"
+          width="560"
+          height="315"
+          [src]="url !== '' ? getSanitizedURL(url) : ''"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
         ></iframe>
       </div>
@@ -15,25 +19,30 @@
       </div>
       <div class="row">
         <div class="col d-flex align-items-start">
-          <p class="f-75">{{ video.likes }} likes . {{ video.time }}</p>
+          <p><strong>{{ video.likes }}</strong> likes . <strong>{{ video.time }}</strong></p>
         </div>
         <div class="col">
           <a (click)="like()" class="mx-3 text-decoration-none text-dark"
-            ><i class="fa-solid fa-thumbs-up mx-2"></i
+            ><i class="fa-solid fa-thumbs-up mx-2 like-h "></i
           ></a>
-          <a (click)="share()" class="mx-3 text-decoration-none text-dark"
-            ><i class="fa-solid fa-share mx-2"></i>Share</a
-          >
         </div>
-        <div class="row">
-          <span class="text-primary">{{ url }}</span>
-        </div>
+        <!-- <div class="row">
+          <span
+            class="text-primary"
+            [innerText]="url !== '' ? getSanitizedURL(url) : ''"
+          ></span>
+        </div> -->
         <div class="row">{{ video.description }}</div>
       </div>
     </div>
-    <div class="col-4 ml-2">
-      <div class="row mt-2" *ngFor="let video of remainingVideos">{{video}}</div>
-        <div class="row mt-2" *ngFor="let video of remainingVideos">
+    <!-- Remaining videos -->
+    <div class="col-4 ml-2"> 
+      <!-- <div class="row mt-2" *ngFor="let video of remainingVideos">{{video}}</div> -->
+      <div
+        class="row mt-2"
+        *ngFor="let video of remainingVideos"
+        (click)="open(video.id)"
+      >
         <div class="col-5 pl-0">
           <img src="{{ video.thumbnail }}" alt="" class="align-card-img" />
         </div>

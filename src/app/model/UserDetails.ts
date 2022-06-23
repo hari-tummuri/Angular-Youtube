@@ -1,4 +1,6 @@
-export interface UserDetails{
-    username: string;
-    password: string;
+export interface UserDetails {
+  username: string;
+  password: string;
+  channel: string;
+  logo: string;
 }

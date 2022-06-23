@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SecurityContext } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { VideoDetails } from 'src/app/model/VideoDetails';
@@ -22,28 +22,77 @@ export class VideoComponent implements OnInit {
     likes: 0,
     time: '',
   };
-  allVideos: VideoDetails[] = [];
+  // allVideos: VideoDetails[] = [];
   url: string = '';
   remainingVideos: VideoDetails[] = [];
   constructor(
     private route: ActivatedRoute,
-    private videoService: VideoService
-  ) {
-    this.remainingVideos = this.videoService.getRemainingVideos(this.id);
+    private videoService: VideoService,
+    private sanitizer: DomSanitizer
+  ) {}
+
+  ngOnInit(): void {
+    // if (this.url === '') this.url = this.video.videoUrl;
+    // else this.url = '';
+    this.id = this.route.snapshot.params['id'];
+    console.log(this.id);
+    this.getVideoById(this.id);
+    this.getRemainingVideos(this.id);
     console.log(this.remainingVideos);
   }
 
-  ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
-    console.log(this.id);
-    this.video = this.videoService.getVideoById(this.id);
+  getSanitizedURL(url: string) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 
   like() {
     this.video.likes = this.video.likes + 1;
+    this.updateVideo();
   }
-  share() {
-    if (this.url === '') this.url = this.video.videoUrl;
-    else this.url = '';
+
+  open(id: number) {
+    this.getVideoById(id);
+    this.getRemainingVideos(id);
+  }
+
+  videoUrl() {
+    // return this.sanitizer.sanitize(SecurityContext.RESOURCE_URL, this.sanitizer.bypassSecurityTrustResourceUrl(this.video.videoUrl))
+
+    return this.sanitizer.bypassSecurityTrustUrl(this.video.videoUrl);
+  }
+
+  getRemainingVideos(id: number) {
+    this.videoService.getRemainingVideos(id).subscribe({
+      next: (response: any) => {
+        console.log(response);
+
+        this.remainingVideos = response;
+      },
+      error: (error) => {
+        console.log(error);
+      },
+    });
+  }
+
+  getVideoById(id: number) {
+    this.videoService.getVideoById(id).subscribe({
+      next: (response: any) => {
+        this.video = response;
+        this.url = this.video.videoUrl;
+      },
+      error: (error: any) => {
+        console.log();
+      },
+    });
+  }
+  updateVideo() {
+    this.videoService.updateVideo(this.video).subscribe({
+      next: (response: any) => {
+        console.log(response);
+      },
+      error: (error: any) => {
+        console.log(error);
+      },
+    });
   }
 }

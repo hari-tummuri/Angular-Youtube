@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <div class="container w-50 mt-3">
   <form #createForm="ngForm">
-    <h2>Create a video</h2>
+    <h2>Edit your video</h2>
     <!-- title -->
     <div class="mb-3">
       <label for="title" class="form-label">Title</label>
@@ -27,6 +27,6 @@
       <textarea class="form-control" rows="3" [(ngModel)]="video.description" name="description" #description="ngModel" required></textarea>
       <small class="text-danger" *ngIf="!description.valid">Description is required</small>
     </div>
-    <button type="submit" class="btn btn-primary" (click)="create()">Create</button>
+    <button type="submit" class="btn btn-primary" (click)="update()">Update</button>
   </form>
 </div>

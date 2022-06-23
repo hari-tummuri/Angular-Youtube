@@ -1,19 +1,30 @@
 <div class="container w-25 mt-5">
-  <form>
-    <h1 class="h3 mb-3 fw-normal">Please sign Up</h1>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="error !== ''">
+    <strong>{{error}}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <form >
+    <div class="text-center">
+      <img
+      src="https://i.pinimg.com/originals/09/f4/72/09f4726125ab5fa8cbcf754b9ba07e7c.jpg"
+      alt="logo"
+      class="logo-size img-fluid"
+  />
+    </div>
+    <h1 class="h3 my-3 fw-heavy signUpTxt" >Please SignUp</h1>
 
     <div class="my-3">
-      <label for="email" class="form-label">Email address</label>
+      <label for="username" class="form-label">username or Email address</label>
       <input
         type="email"
         class="form-control"
         placeholder="name@example.com"
-        name="email"
-        [(ngModel)]="regesterUser.email"
-        #email="ngModel"
+        name="username"
+        [(ngModel)]="registeruser.username"
+        #username="ngModel"
         required
       />
-      <small class="text-danger" *ngIf="!email.valid">Email required</small>
+      <small class="text-danger" *ngIf="!username.valid">username required</small>
     </div>
     <div class="my-3">
       <label for="password" class="form-label">Password</label>
@@ -22,11 +33,12 @@
         class="form-control"
         placeholder="Password"
         name="password"
-        [(ngModel)]="regesterUser.password"
+        [(ngModel)]="registeruser.password"
         #password="ngModel"
+        minlength="8"
         required
       />
-      <small class="text-danger" *ngIf="!password.valid">Password required</small>
+      <small class="text-danger" *ngIf="!password.valid">Password is invalid</small>
     </div>
     <div class="my-3">
       <label for="confirmPassword" class="form-label">Confirm Password</label>
@@ -35,7 +47,7 @@
         class="form-control"
         placeholder="ConfirmPassword"
         name="confirmPassword"
-        [(ngModel)]="regesterUser.confirmPassword"
+        [(ngModel)]="registeruser.confirmPassword"
         #confirmPassword="ngModel"
         required
       />
@@ -48,7 +60,7 @@
         class="form-control"
         placeholder="Channel"
         name="channel"
-        [(ngModel)]="regesterUser.channel"
+        [(ngModel)]="registeruser.channel"
         #channel="ngModel"
         required
       />
@@ -61,7 +73,7 @@
         class="form-control"
         placeholder="Channel Logo"
         name="logo"
-        [(ngModel)]="regesterUser.logo"
+        [(ngModel)]="registeruser.logo"
         #logo="ngModel"
         required
       />

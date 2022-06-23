@@ -1,10 +1,10 @@
 <app-navbar></app-navbar>
 
 <div class="container mt-3">
-  <h3>Suggestions</h3>
+  <h3>My Videos</h3>
   <div class="row my-3">
-    <div class="col-3 my-3" *ngFor="let video of videos">
-      <div class="card h-100" style="width: 20rem" (click)="open(video.id)">
+    <div class="col-3 my-3" *ngFor="let video of myVideos">
+      <div class="card h-100" style="width: 20rem">
         <img
           class="card-img-top"
           src="{{ video.thumbnail }}"
@@ -19,7 +19,21 @@
 
             <p>{{ video.channel }} <i class="fa-solid fa-circle-check"></i></p>
 
-            <pre>{{ video.likes }} Likes.  {{ video.time }} </pre>
+            <p>
+              <button
+                type="button"
+                class="btn btn-outline-success mx-2"
+                (click)="edit(video.id)"
+              >
+                Edit</button
+              ><button
+                type="button"
+                class="btn btn-outline-danger mx-2"
+                (click)="delete(video.id)"
+              >
+                Delete
+              </button>
+            </p>
           </div>
         </div>
       </div>

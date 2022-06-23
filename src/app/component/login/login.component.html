@@ -1,38 +1,55 @@
 <div class="container w-25 mt-5">
-    <form>
-      <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-  
-      <div class=" my-3">
-        <label for="username" class="form-label" >Username or Email</label>
-        <input
-          type="email"
-          class="form-control"
-          placeholder="name@example.com"
-          name="email"
-          [(ngModel)]="user.username"
-          required
-          #username="ngModel"
-        />
-        <small class="text-danger" *ngIf="!username.valid">Username is required</small>
-      </div>
-      <div class=" my-3">
-        <label for="password" class="form-label">Password</label>
-        <input
-          type="password"
-          class="form-control"
-          placeholder="Password"
-          name="password"
-          [(ngModel)]="user.password"
-          required
-          #password="ngModel"
-        />
-        <small class="text-danger" *ngIf="!password.valid"
-          >Password is required</small
-        >
-      </div>
-      <button class="w-100 btn btn-lg btn-primary mb-2" type="submit" (click)="login()">
-        Sign in
-      </button>
-      <p>Don't You have account? regester <a routerLink="/register">here</a></p>
-    </form>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="error !== ''">
+    <strong>{{error}}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
+  <form >
+    <div class="text-center">
+      <img
+        src="https://i.pinimg.com/originals/09/f4/72/09f4726125ab5fa8cbcf754b9ba07e7c.jpg"
+        alt="logo"
+        class="logo-size img-fluid"
+      />
+    </div>
+    <h1 class="h3 my-3 fw-heavy signUpTxt">Please sign in</h1>
+
+    <div class="my-3">
+      <label for="username" class="form-label">Username or Email</label>
+      <input
+        type="email"
+        class="form-control"
+        placeholder="name@example.com"
+        name="email"
+        [(ngModel)]="user.username"
+        required
+        #username="ngModel"
+      />
+      <small class="text-danger" *ngIf="!username.valid"
+        >Username is required</small
+      >
+    </div>
+    <div class="my-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Password"
+        name="password"
+        [(ngModel)]="user.password"
+        required
+        #password="ngModel"
+      />
+      <small class="text-danger" *ngIf="!password.valid"
+        >Password is required</small
+      >
+    </div>
+    <button
+      class="w-100 btn btn-lg btn-primary mb-2"
+      type="submit"
+      (click)="login()"
+    >
+      Sign in
+    </button>
+    <p>Don't You have account? regester <a routerLink="/register">here</a></p>
+  </form>
+</div>

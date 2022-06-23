@@ -18,9 +18,15 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.videos = this.videoService.getAllVideos();
+    this.getAllVideos();
+       
   }
 
+  getAllVideos(){
+    this.videoService.getAllVideos().subscribe({next:(response:any)=>{
+      this.videos = response
+    }})
+  }
   open(id: number) {
     this.router.navigate(['/video',id]);
   }
