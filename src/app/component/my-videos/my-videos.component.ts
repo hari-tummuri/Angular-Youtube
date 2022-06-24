@@ -43,4 +43,8 @@ export class MyVideosComponent implements OnInit {
     }})
     
   }
+
+  open(id: number) {
+    this.router.navigate(['/video',id]);
+  }
 }
