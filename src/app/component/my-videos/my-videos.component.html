@@ -11,15 +11,18 @@
           alt="Card image cap"
         />
         <div class="row mt-2 mx-2">
-          <img src="{{ video.logo }}" alt="channel logo" class="col-3 circle" />
-          <div class="col-9 mt-2">
+          <div class="col-3 circle">
+            <img src="{{ video.logo }}" alt="channel logo" class="col-3 circle" />
+          </div>
+          <div class="col-9 mt-2 mx-2">
             <div class="container-title">
               <strong>{{ video.title }}</strong>
             </div>
+          </div>
+          <div class="row mt-2 mx-2">
+            <p class="mx-2">{{ video.channel }} <i class="fa-solid fa-circle-check"></i></p>
 
-            <p>{{ video.channel }} <i class="fa-solid fa-circle-check"></i></p>
-
-            <p>
+            <p class="mx-2">
               <button
                 type="button"
                 class="btn btn-outline-success mx-2"

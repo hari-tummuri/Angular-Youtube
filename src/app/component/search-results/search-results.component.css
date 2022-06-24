@@ -1,15 +1,14 @@
-.circle{
-    border-radius: 50%;
-    height: 47px;
-    width: 72px;
-
+.circle {
+  border-radius: 50%;
+  height: 40px;
+  width: 42px;
 }
-.f-75{
-    font-size: .75rem;
+.f-75 {
+  font-size: 0.75rem;
 }
 
 .container-title {
-    line-height: 2.5ex;
-    height: 7.5ex; /* 2.5ex for each visible line */
-    overflow: hidden;
-  }
+  line-height: 2.5ex;
+  height: 7.5ex; /* 2.5ex for each visible line */
+  overflow: hidden;
+}
