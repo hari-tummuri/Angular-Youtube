@@ -17,7 +17,6 @@ import { MyVideosComponent } from './component/my-videos/my-videos.component';
 import { LogoutComponent } from './component/logout/logout.component';
 import { SearchResultsComponent } from './component/search-results/search-results.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +31,6 @@ import { SearchResultsComponent } from './component/search-results/search-result
     MyVideosComponent,
     LogoutComponent,
     SearchResultsComponent,
-
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
