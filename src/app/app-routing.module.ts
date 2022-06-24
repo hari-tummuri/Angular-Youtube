@@ -14,16 +14,28 @@ import { RouteGuardService } from './service/route-guard.service';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  {path:'logout',component:LogoutComponent,canActivate: [RouteGuardService],},
+  {
+    path: 'logout',
+    component: LogoutComponent,
+    canActivate: [RouteGuardService],
+  },
   { path: 'video/:id', component: VideoComponent },
   {
     path: 'create',
     component: CreateComponent,
     canActivate: [RouteGuardService],
   },
-  {path:'search/:searchString',component:SearchResultsComponent},
-  { path: 'edit/:id', component: EditComponent, canActivate: [RouteGuardService] },
-  {path:'myVideos',component:MyVideosComponent,canActivate:[RouteGuardService]},
+  { path: 'search/:searchString', component: SearchResultsComponent },
+  {
+    path: 'edit/:id',
+    component: EditComponent,
+    canActivate: [RouteGuardService],
+  },
+  {
+    path: 'myVideos',
+    component: MyVideosComponent,
+    canActivate: [RouteGuardService],
+  },
   { path: 'register', component: RegesterComponent },
 ];
 

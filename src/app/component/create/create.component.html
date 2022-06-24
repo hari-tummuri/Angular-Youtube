@@ -1,30 +1,30 @@
 <app-navbar></app-navbar>
 <div class="container w-50 mt-3">
   <form #createForm="ngForm">
-    <h2>Create a video</h2>
+    <h2 class="createTXT">Create a video</h2>
     <!-- title -->
     <div class="mb-3">
       <label for="title" class="form-label">Title</label>
-      <input  type="text" class="form-control" [(ngModel)]="video.title" name="title" #title="ngModel" required/>
+      <input  type="text" class="form-control" [(ngModel)]="video.title" name="title" autocomplete="off" #title="ngModel" required/>
       <small class="text-danger" *ngIf="!title.valid">Title is required</small>
     </div>
     <!-- url -->
     <div class="mb-3">
       <label for="url" class="form-label">Video Url</label>
-      <input type="text" class="form-control" [(ngModel)]="video.videoUrl" name="url" #videoUrl="ngModel" required/>
+      <input type="text" class="form-control" [(ngModel)]="video.videoUrl" name="url" autocomplete="off" #videoUrl="ngModel" required/>
       <small class="text-danger" *ngIf="!videoUrl.valid">videoUrl is required</small>
     </div>
 
     <!-- Thumbnail -->
     <div class="mb-3">
-      <label for="Thumbnail" class="form-label">Thumbnail</label>
-      <input type="text" class="form-control" [(ngModel)]="video.thumbnail" name="thumbnail" #thumbnail="ngModel" required/>
+      <label for="Thumbnail" class="form-label">Thumbnail Url</label>
+      <input type="text" class="form-control" [(ngModel)]="video.thumbnail" name="thumbnail" autocomplete="off" #thumbnail="ngModel" required/>
       <small class="text-danger" *ngIf="!thumbnail.valid">Thumbnail is required</small>
     </div>
     <!-- description -->
     <div class="mb-3">
       <label for="description" class="form-label">Description</label>
-      <textarea class="form-control" rows="3" [(ngModel)]="video.description" name="description" #description="ngModel" required></textarea>
+      <textarea class="form-control" rows="3" [(ngModel)]="video.description" name="description" autocomplete="off" #description="ngModel" required></textarea>
       <small class="text-danger" *ngIf="!description.valid">Description is required</small>
     </div>
     <button type="submit" class="btn btn-primary" (click)="create()">Create</button>

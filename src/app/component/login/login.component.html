@@ -20,6 +20,7 @@
         class="form-control"
         placeholder="name@example.com"
         name="email"
+        autocomplete="off"
         [(ngModel)]="user.username"
         required
         #username="ngModel"
@@ -35,6 +36,7 @@
         class="form-control"
         placeholder="Password"
         name="password"
+        autocomplete="off"
         [(ngModel)]="user.password"
         required
         #password="ngModel"
@@ -51,5 +53,6 @@
       Sign in
     </button>
     <p>Don't You have account? regester <a routerLink="/register">here</a></p>
+    <p>Click here to go <a routerLink="/">Home</a></p>
   </form>
 </div>

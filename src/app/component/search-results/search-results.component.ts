@@ -11,11 +11,15 @@ import { VideoService } from 'src/app/service/video.service';
 export class SearchResultsComponent implements OnInit {
   searchString!: string;
   searchVideos:VideoDetails[]=[]
-  constructor(private videoService: VideoService,private route:ActivatedRoute,private router:Router) {}
+  
+  constructor(private videoService: VideoService,private route:ActivatedRoute,private router:Router) {
+    this.router.routeReuseStrategy.shouldReuseRoute=()=> false;
+  }
 
   ngOnInit(): void {
+    this.searchString=''
     this.searchString=this.route.snapshot.params['searchString']
-    // console.log(this.searchString);
+    console.log(this.searchString);
     this.search()
     
   }

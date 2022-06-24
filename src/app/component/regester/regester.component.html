@@ -20,6 +20,7 @@
         class="form-control"
         placeholder="name@example.com"
         name="username"
+        autocomplete="off"
         [(ngModel)]="registeruser.username"
         #username="ngModel"
         required
@@ -33,6 +34,7 @@
         class="form-control"
         placeholder="Password"
         name="password"
+        autocomplete="off"
         [(ngModel)]="registeruser.password"
         #password="ngModel"
         minlength="8"
@@ -47,6 +49,7 @@
         class="form-control"
         placeholder="ConfirmPassword"
         name="confirmPassword"
+        autocomplete="off"
         [(ngModel)]="registeruser.confirmPassword"
         #confirmPassword="ngModel"
         required
@@ -60,6 +63,7 @@
         class="form-control"
         placeholder="Channel"
         name="channel"
+        autocomplete="off"
         [(ngModel)]="registeruser.channel"
         #channel="ngModel"
         required
@@ -73,6 +77,7 @@
         class="form-control"
         placeholder="Channel Logo"
         name="logo"
+        autocomplete="off"
         [(ngModel)]="registeruser.logo"
         #logo="ngModel"
         required
@@ -87,5 +92,6 @@
       Sign Up
     </button>
     <p>Already have account? Sign In <a routerLink="/login">here</a></p>
+    <p>Click here to go <a routerLink="/">Home</a></p>
   </form>
 </div>
