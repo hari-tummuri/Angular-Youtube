@@ -1,6 +1,6 @@
 import { Component, OnInit, SecurityContext } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { VideoDetails } from 'src/app/model/VideoDetails';
 import { VideoService } from 'src/app/service/video.service';
 
@@ -28,7 +28,8 @@ export class VideoComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private videoService: VideoService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private router: Router
   ) {}
 
   ngOnInit(): void {

@@ -9,3 +9,9 @@
 .like-h{
     font-size: 1.5rem;
 }
+
+.container-title {
+    line-height: 2.5ex;
+    height: 5.0ex; /* 2.5ex for each visible line */
+    overflow: hidden;
+  }
